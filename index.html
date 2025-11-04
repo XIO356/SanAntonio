@@ -50,12 +50,13 @@
     
     .escudo {
       position: absolute;
-      bottom: 90px;
+      top: 50%;
       right: 40px;
+      transform: translateY(-50%);
       width: 150px;
       height: auto;
-      object-fit: contain;
-      object-position: center;
+      filter: drop-shadow(0 0 12px rgb(251, 254, 23));
+      transition: transform 0.3s ease;
     }
     
     .escudo:hover {
@@ -160,6 +161,7 @@
 
 </body>
 </html>
+
 
 
 
