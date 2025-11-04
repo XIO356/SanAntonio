@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Distrito de San Antonio</title>
 
-  <!-- Fuente similar a Forte -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
@@ -32,30 +31,36 @@
       align-items: center;
       position: relative;
     }
-    
+
     .overlay {
-      position: relative;
+      position: relative; 
       margin-bottom: 60px;
       width: 100%;
       background-color: rgba(245, 246, 234, 0.5);
       padding: 20px;
       text-align: center;
       display: flex;
-      align-items: center;      /* centra verticalmente */
-      justify-content: center;  
-      gap: 20px;             
-      }
-    
+      justify-content: center;
+      align-items: center; /* centra verticalmente el contenido */
+      gap: 20px;
+    }
+
+    .overlay h1 {
+      font-size: 5em;
+      color: #000;
+      text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+    }
+
     .escudo {
       width: 150px;
       height: auto;
       filter: drop-shadow(0 0 12px rgb(251, 254, 23));
       transition: transform 0.3s ease;
     }
-    
+
     .escudo:hover {
       transform: scale(1.1);
-      filter: drop-shadow(0 0 20px rgba(246, 200, 73, 0.747))
+      filter: drop-shadow(0 0 20px rgba(246, 200, 73, 0.747));
     }
 
     .btn {
@@ -81,7 +86,7 @@
     ================================= */
     .info {
       height: 100vh;
-      background-color: #ee9a8f; /* Fondo crema suave */
+      background-color: #ee9a8f;
       padding: 40px;
       display: flex;
       flex-direction: column;
@@ -114,14 +119,16 @@
     }
 
     @media (max-width: 768px) {
+      .overlay {
+        flex-direction: column;
+      }
+
       .overlay h1 {
         font-size: 2.5em;
       }
 
       .escudo {
         width: 80px;
-        bottom: 10px;
-        right: 10px;
       }
 
       iframe {
@@ -135,11 +142,11 @@
 
   <!-- Sección Principal -->
   <section class="hero">
-  <div class="overlay">
-  <h1>Distrito de San Antonio</h1>
-  <img src="San Antonio.png" alt="Escudo de San Antonio" class="escudo">
-  <a href="#info" class="btn">Ver más</a>
-</div>
+    <div class="overlay">
+      <h1>Distrito de San Antonio</h1>
+      <img src="San Antonio.png" alt="Escudo de San Antonio" class="escudo">
+    </div>
+    <a href="#info" class="btn">Ver más</a>
   </section>
 
   <!-- Sección de Información -->
@@ -149,41 +156,8 @@
       loading="lazy">
     </iframe>
 
-    <!-- Botón de regreso -->
     <a href="https://xio356.github.io/pagina0/" class="volver">← Volver al inicio</a>
   </section>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
