@@ -29,43 +29,34 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      align-items: center;
       position: relative;
     }
 
     .overlay {
       position: relative; 
-      margin-bottom: 60px;
       width: 100%;
       background-color: rgba(245, 246, 234, 0.5);
       padding: 20px;
       text-align: center;
+      display: flex;
+      align-items: center; /* centra verticalmente dentro de la franja */
+      justify-content: space-between; /* título a la izquierda, escudo a la derecha */
+    }
+
+    .overlay .titulo-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* título y botón alineados a la izquierda */
     }
 
     .overlay h1 {
       font-size: 5em;
       color: #000;
       text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
-    }
-    
-    .escudo {
-      position: absolute;
-      top: 50%;             /* centra verticalmente en la franja */
-      right: 40px;          /* margen derecho */
-      transform: translateY(-50%);
-      width: 120px;          /* tamaño adecuado */
-      height: auto;
-      filter: drop-shadow(0 0 12px rgb(251, 254, 23));
-      transition: transform 0.3s ease;
-    }
-    
-    .escudo:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 20px rgba(246, 200, 73, 0.747));
+      margin-bottom: 10px;
     }
 
     .btn {
-      display: inline-block;
       font-size: 2em;
       color: white;
       width: 160px;
@@ -75,11 +66,22 @@
       text-decoration: none;
       transition: 0.3s;
       background-color: #c40000;
-      margin-top: 10px;
     }
 
     .btn:hover {
       background-color: red;
+    }
+
+    .escudo {
+      width: 120px;
+      height: auto;
+      filter: drop-shadow(0 0 12px rgb(251, 254, 23));
+      transition: transform 0.3s ease;
+    }
+
+    .escudo:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 20px rgba(246, 200, 73, 0.747));
     }
 
     /* ================================
@@ -87,7 +89,7 @@
     ================================= */
     .info {
       height: 100vh;
-      background-color: #ee9a8f; /* Fondo crema suave */
+      background-color: #ee9a8f;
       padding: 40px;
       display: flex;
       flex-direction: column;
@@ -120,13 +122,28 @@
     }
 
     @media (max-width: 768px) {
+      .overlay {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .overlay .titulo-btn {
+        align-items: center;
+      }
+
       .overlay h1 {
         font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      .btn {
+        margin-bottom: 10px;
       }
 
       .escudo {
         width: 80px;
-        right: 10px;
+        margin-top: 10px;
       }
 
       iframe {
@@ -141,8 +158,10 @@
   <!-- Sección Principal -->
   <section class="hero">
     <div class="overlay">
-      <h1>Distrito de San Antonio</h1>
-      <a href="#info" class="btn">Ver más</a>
+      <div class="titulo-btn">
+        <h1>Distrito de San Antonio</h1>
+        <a href="#info" class="btn">Ver más</a>
+      </div>
       <img src="San Antonio.png" alt="Escudo de San Antonio" class="escudo">
     </div>
   </section>
@@ -154,7 +173,6 @@
       loading="lazy">
     </iframe>
 
-    <!-- Botón de regreso -->
     <a href="https://xio356.github.io/pagina0/" class="volver">← Volver al inicio</a>
   </section>
 
