@@ -31,22 +31,24 @@
       justify-content: flex-end;
       position: relative;
     }
-    
+
     .overlay {
-      position: relative; 
+      position: relative;
       width: 100%;
       background-color: rgba(245, 246, 234, 0.5);
       padding: 20px;
-      text-align: center;
       display: flex;
-      align-items: center;
-      justify-content: center; /* todo centrado horizontalmente */
+      align-items: center; /* centra verticalmente dentro de la franja */
+      justify-content: flex-start; /* mantiene escudo a la derecha */
+      text-align: center;
     }
 
-    .overlay .titulo-btn {
+    /* Centrar título y botón */
+    .titulo-btn {
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* título y botón alineados a la izquierda */
+      align-items: center;
+      margin: 0 auto; /* centra el bloque dentro del overlay */
     }
 
     .overlay h1 {
@@ -128,8 +130,8 @@
         justify-content: center;
       }
 
-      .overlay .titulo-btn {
-        align-items: center;
+      .titulo-btn {
+        margin: 0;
       }
 
       .overlay h1 {
@@ -178,6 +180,3 @@
 
 </body>
 </html>
-
-
-
