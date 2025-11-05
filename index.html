@@ -1,173 +1,182 @@
-<!DOCTYPE html> 
-<html lang="es"> 
-<head> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Distrito de San Antonio</title> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distrito de San Antonio</title>
 
-  <!-- Fuente similar a Forte --> 
-  <style> 
-    @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap'); 
+  <!-- Fuente similar a Forte -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
-    * { 
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box; 
-    } 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    body { 
-      font-family: 'Muthiara Demo', cursive; 
-      color: #000; 
-    } 
+    body {
+      font-family: 'Muthiara Demo', cursive;
+      color: #000;
+    }
 
-    /* ================================ Sección principal ================================= */ 
-    .hero { 
-      height: 100vh; 
-      background: url(https://diariouno.pe/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-26-at-7.30.32-AM-3-1024x570.jpeg) no-repeat center center/cover; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: flex-end; 
-      position: relative; 
-    } 
+    /* ================================
+       Sección principal
+    ================================= */
+    .hero {
+      height: 100vh;
+      background: url(https://diariouno.pe/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-26-at-7.30.32-AM-3-1024x570.jpeg) no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+    }
 
-    .overlay { 
-      position: relative; 
-      width: 100%; 
-      background-color: rgba(245, 246, 234, 0.5); 
-      padding: 20px; 
-      text-align: center; 
-      display: flex; 
-      align-items: center; /* centra verticalmente dentro de la franja */ 
-      justify-content: space-between; /* título a la izquierda, escudo a la derecha */ 
-    } 
+    .overlay {
+      position: relative;
+      width: 100%;
+      background-color: rgba(245, 246, 234, 0.5);
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center; /* centra verticalmente dentro de la franja */
+      justify-content: space-between; /* título a la izquierda, escudo a la derecha */
+    }
 
-    .overlay .titulo-btn { 
-      display: flex; 
-      flex-direction: column; 
-      align-items: flex-start; /* título y botón alineados a la izquierda */ 
-    } 
+    /* Centrar título y botón sin mover el escudo */
+    .overlay .titulo-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* centra título y botón */
+      margin-left: auto;
+      margin-right: auto; /* centra horizontalmente el bloque */
+    }
 
-    .overlay h1 { 
-      font-size: 5em; 
-      color: #000; 
-      text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8); 
-      margin-bottom: 10px; 
-    } 
+    .overlay h1 {
+      font-size: 5em;
+      color: #000;
+      text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+      margin-bottom: 10px;
+    }
 
-    .btn { 
-      font-size: 2em; 
-      color: white; 
-      width: 160px; 
-      padding: 12px 15px; 
-      border-radius: 25px; 
-      font-weight: bold; 
-      text-decoration: none; 
-      transition: 0.3s; 
-      background-color: #c40000; 
-    } 
+    .btn {
+      font-size: 2em;
+      color: white;
+      width: 160px;
+      padding: 12px 15px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      background-color: #c40000;
+    }
 
-    .btn:hover { 
-      background-color: red; 
-    } 
+    .btn:hover {
+      background-color: red;
+    }
 
-    .escudo { 
-      width: 120px; 
-      height: auto; 
-      filter: drop-shadow(0 0 12px rgb(251, 254, 23)); 
-      transition: transform 0.3s ease; 
-    } 
+    .escudo {
+      width: 120px;
+      height: auto;
+      filter: drop-shadow(0 0 12px rgb(251, 254, 23));
+      transition: transform 0.3s ease;
+    }
 
-    .escudo:hover { 
-      transform: scale(1.1); 
-      filter: drop-shadow(0 0 20px rgba(246, 200, 73, 0.747)); 
-    } 
+    .escudo:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 20px rgba(246, 200, 73, 0.747));
+    }
 
-    /* ================================ Sección de información ================================= */ 
-    .info { 
-      height: 100vh; 
-      background-color: #ee9a8f; 
-      padding: 40px; 
-      display: flex; 
-      flex-direction: column; 
-      align-items: center; 
-      justify-content: center; 
-      text-align: center; 
-    } 
+    /* ================================
+       Sección de información
+    ================================= */
+    .info {
+      height: 100vh;
+      background-color: #ee9a8f;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-    iframe { 
-      width: 80%; 
-      height: 650px; 
-      border: 3px solid #333; 
-      border-radius: 15px; 
-      margin-bottom: 30px; 
-    } 
+    iframe {
+      width: 80%;
+      height: 650px;
+      border: 3px solid #333;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
 
-    .volver { 
-      display: inline-block; 
-      font-size: 1.5em; 
-      color: white; 
-      background-color: #0078D7; 
-      padding: 10px 20px; 
-      border-radius: 20px; 
-      text-decoration: none; 
-      transition: background-color 0.3s; 
-    } 
+    .volver {
+      display: inline-block;
+      font-size: 1.5em;
+      color: white;
+      background-color: #0078D7;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
 
-    .volver:hover { 
-      background-color: #005fa3; 
-    } 
+    .volver:hover {
+      background-color: #005fa3;
+    }
 
-    @media (max-width: 768px) { 
-      .overlay { 
-        flex-direction: column; 
-        align-items: center; 
-        justify-content: center; 
-      } 
+    @media (max-width: 768px) {
+      .overlay {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-      .overlay .titulo-btn { 
-        align-items: center; 
-      } 
+      .overlay .titulo-btn {
+        margin-left: 0;
+        margin-right: 0;
+        align-items: center;
+      }
 
-      .overlay h1 { 
-        font-size: 2.5em; 
-        margin-bottom: 10px; 
-      } 
+      .overlay h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
 
-      .btn { 
-        margin-bottom: 10px; 
-      } 
+      .btn {
+        margin-bottom: 10px;
+      }
 
-      .escudo { 
-        width: 80px; 
-        margin-top: 10px; 
-      } 
+      .escudo {
+        width: 80px;
+        margin-top: 10px;
+      }
 
-      iframe { 
-        width: 95%; 
-        height: 300px; 
-      } 
-    } 
-  </style> 
-</head> 
-<body> 
+      iframe {
+        width: 95%;
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
 
-  <!-- Sección Principal --> 
-  <section class="hero"> 
-    <div class="overlay"> 
-      <div class="titulo-btn"> 
-        <h1>Distrito de San Antonio</h1> 
-        <a href="#info" class="btn">Ver más</a> 
-      </div> 
-      <img src="San Antonio.png" alt="Escudo de San Antonio" class="escudo"> 
-    </div> 
-  </section> 
+  <!-- Sección Principal -->
+  <section class="hero">
+    <div class="overlay">
+      <div class="titulo-btn">
+        <h1>Distrito de San Antonio</h1>
+        <a href="#info" class="btn">Ver más</a>
+      </div>
+      <img src="San Antonio.png" alt="Escudo de San Antonio" class="escudo">
+    </div>
+  </section>
 
-  <!-- Sección de Información --> 
-  <section class="info" id="info"> 
-    <iframe src="https://www.google.com/maps?q=San Antonio,+Cañete,+Lima,+Perú&output=embed" loading="lazy"> 
-    </iframe> 
-    <a href="https://xio356.github.io/pagina0/" class="volver">← Volver al inicio</a> 
-  </section> 
+  <!-- Sección de Información -->
+  <section class="info" id="info">
+    <iframe src="https://www.google.com/maps?q=San Antonio,+Cañete,+Lima,+Perú&output=embed" loading="lazy">
+    </iframe>
+    <a href="https://xio356.github.io/pagina0/" class="volver">← Volver al inicio</a>
+  </section>
 
-</body> 
+</body>
 </html>
